@@ -1,0 +1,9 @@
+From alpine:latest
+
+RUN echo "<html><head><title>Test Page</title</head><body><p>Greetings here</p></body></html>" > index.html
+RUN apk add --update netcat-openbsd && rm -rf /var/cache/apk/*
+
+EXPOSE 8080
+
+CMD mv index.html /scripts/index.html ; sh /scripts/server_script.sh 
+

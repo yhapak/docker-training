@@ -1,0 +1,6 @@
+FROM alpine:latest
+
+RUN apk add --update netcat-openbsd bash && rm -rf /var/cache/apk/*
+
+CMD bash /scripts/client_script.sh 
+
